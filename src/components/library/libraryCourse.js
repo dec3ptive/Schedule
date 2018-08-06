@@ -18,7 +18,7 @@ class LibraryCourse extends Component {
                 <Arrow className= "library-cour__arrow"/>
                 <Action onCLick={() => this.props.toggleEnrolled(this.props.id)} className="library-course__action"/>
                 <div className="library-course__description">
-                    <label> course__description</label>
+                    <label> Course__Description</label>
                     <p>
                         { this.props.course.description }
                     </p>
