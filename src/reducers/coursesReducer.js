@@ -1,5 +1,4 @@
-import { FETCH_COURSES } from '../actions/types';
-import { connect } from 'react-redux';
+import { FETCH_COURSES, TOGGLE_ENROLLED } from '../actions/types';
 
 export default function(state = [], action) {
     switch (action.type) {
@@ -8,6 +7,9 @@ export default function(state = [], action) {
                 ...state,
                 ...action.payload
             ]
+        case toggleEnrolled:
+            console.log(action.payload)
+            return state;
         default: 
             return state;
     }

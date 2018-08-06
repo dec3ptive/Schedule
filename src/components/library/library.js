@@ -5,23 +5,28 @@ import { connect } from 'tls';
 
 
 class Library extends Component {
-    componentDidMount() {
-        
+    componentWillMount() {
+        this.props.fetchCourses()
     }
     
     
-    
     render() {
+        console.log(this.props.courses);
         this.props.fetchCourses()
         return (
             <div className="library">
                 <h1 className="library__title">Course Library</h1>
-                <LibraryCourse/>
-                <LibraryCourse/>
-                <LibraryCourse/>
+                {this.renderCourses()}
             </div>
         )
     }
 }
 
-export default connect(null, actions)(library);
+function mapStateToProp(state) {
+    return 
+    {  
+        courses: state.courses
+    }
+}
+
+export default connect(mapStateToProps, actions)(library);
